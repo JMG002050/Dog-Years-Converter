@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dogs</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dog Years Converter</title>
 </head>
 <body>
-<script></script>
+	<h1>Dog Years Converter</h1>
+
+	<!-- DROPDOWN MENU -->
+	<label for="conversionType">Choose conversion:</label>
+	<select id="conversionType">
+		<option value="humanToDog">Human years to Dog years</option>
+		<option value="dogToHuman">Dog years to Human years</option>
+	</select>
+
+	<!-- INPUT + BUTTON -->
+	<input type="number" id="ageInput" placeholder="Enter age" />
+	<button id="convertBtn">Convert</button>
+
+	<!-- PLACEHOLDER FOR RESULT -->
+	<p id="result"></p>
+
+	<script>
+		const input = document.querySelector('#ageInput');
+		const dropdown = document.querySelector('#conversionType');
+		const button = document.querySelector('#convertBtn');
+		const result = document.querySelector('#result');
+
+		button.addEventListener('click', function () {
+			const age = Number(input.value);
+			const type = dropdown.value;
+
+			if (!age || isNaN(age) || age < 0 || age > 150) {
+				result.textContent = 'Please enter a valid age between 0 and 150.';
+			} else if (type === 'humanToDog') {
+				const dogYears = age * 7;
+				result.textContent = `That's ${dogYears} in dog years 🐶`;
+			} else if (type === 'dogToHuman') {
+				const humanYears = age / 7;
+				result.textContent = `That's ${humanYears.toFixed(1)} in human years 🧠`;
+			}
+		});
+	</script>
 </body>
 </html>
