@@ -1,0 +1,114 @@
+/* === UNIVERSAL === */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+
+/* LAYOUT SECTION */
+.layout {
+	min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url("resources/images/hero-dog.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+}
+
+.form {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	min-height: 300px;
+	height: auto;
+	display: flex; 
+	flex-direction: column;
+	max-width: 35%;
+	justify-content: center;
+	background-color: #ffecd9;
+	border-radius: 1rem;
+	padding: 3rem;
+	gap: 2rem;
+}
+
+.instructions {
+  font-size: 1rem;
+  color: #444;
+  text-align: lefts;
+  line-height: 2.5;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.form select,
+.form input,
+.form button {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  background-color: #ff914d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #e66a00;
+}
+
+#result {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* === MEDIA QUERY SMALL SCREENS === */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+		background-position: center;
+  }
+
+  .form {
+    max-width: 90%;
+    margin: 0;
+    min-height: auto;
+    max-height: none;
+  }	
+}
+
+/* === MEDIA BIG SMALL SCREENS === */
+@media (min-width: 1024px) {
+  .layout {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 8rem;
+    padding-right: 2rem;
+  }
+
+  .form {
+    margin: 0;
+    max-width: 35%;
+  }
+}

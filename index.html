@@ -4,24 +4,36 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dog Years Converter</title>
+
+	<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-	<h1>Dog Years Converter</h1>
+	<div class="layout">
+		<div class="form">
+			<h1>Dog Years Converter</h1>
+			<!-- INSTRUCTIONS -->
+			<p class="instructions">
+				Ever wondered how old your dog is in human years? 🐶 Or how old you’d be in dog years? 👫
+				<b>Just enter an age, pick a direction, and we’ll do the math! 🙂‍↔️</b>
+			</p>
 
-	<!-- DROPDOWN MENU -->
-	<label for="conversionType">Choose conversion:</label>
-	<select id="conversionType">
-		<option value="humanToDog">Human years to Dog years</option>
-		<option value="dogToHuman">Dog years to Human years</option>
-	</select>
+			<!-- DROPDOWN MENU -->
+			<label for="conversionType">Choose conversion:</label>
+			<select id="conversionType">
+				<option value="humanToDog">Human years to dog years</option>
+				<option value="dogToHuman">Dog years to human years</option>
+			</select>
 
-	<!-- INPUT + BUTTON -->
-	<input type="number" id="ageInput" placeholder="Enter age" />
-	<button id="convertBtn">Convert</button>
+			<!-- INPUT + BUTTON -->
+			<input type="number" id="ageInput" placeholder="Enter age" />
+			<button id="convertBtn">Convert</button>
 
-	<!-- PLACEHOLDER FOR RESULT -->
-	<p id="result"></p>
+			<!-- PLACEHOLDER FOR RESULT -->
+			<p id="result"></p>
+		</div>
+	</div>
 
+<!-- JS CODE -->
 	<script>
 		const input = document.querySelector('#ageInput');
 		const dropdown = document.querySelector('#conversionType');
